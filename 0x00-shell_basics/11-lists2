@@ -1,2 +1,16 @@
 #!/bin/bash
-ls -la .; ls -la ..; ls -la /boot
+
+# Loop through all HTML files in the current working directory
+for file in *.html; do
+  # Check if the file exists in the parent directory
+  if [ ! -f ../$file ]; then
+    # If it doesn't, copy the file to the parent directory
+    cp "$file" "../$file"
+  else
+    # If it does, compare the timestamps of the two files
+    if [ "$file" -nt "../$file" ]; then
+      # If the file in the current directory is newer, copy it to the parent directory
+      cp "$file" "../$file"
+    fi
+  fi
+done
