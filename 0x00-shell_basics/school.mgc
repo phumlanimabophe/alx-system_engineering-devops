@@ -1,5 +1,5 @@
 #!/bin/bash
-for file in $(ls | grep Holberton)
+for file in $(ls | grep School)
 do
     mime=$(file -i "$file")
     echo "$file: $mime"
