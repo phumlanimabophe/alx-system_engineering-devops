@@ -1,2 +1,2 @@
 #!/bin/bash
-ls -pamU | sort -t, -k1,1 | tr '\n' ',' | sed 's/\//,/g' | sed 's/,$/\n/'
+ls -pamv
