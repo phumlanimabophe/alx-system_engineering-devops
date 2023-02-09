@@ -1,2 +1,6 @@
 #!/bin/bash
-ls | grep Holberton
+for file in $(ls | grep Holberton)
+do
+    mime=$(file -i "$file")
+    echo "$file: $mime"
+done
