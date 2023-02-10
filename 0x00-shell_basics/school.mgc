@@ -1,6 +1,2 @@
 #!/bin/bash
-for file in $(ls | grep School)
-do
-    mime=$(file -i "$file")
-    echo "$file: $mime"
-done
+0 string SCHOOL School data
