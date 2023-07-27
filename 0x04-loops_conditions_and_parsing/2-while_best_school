@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+# while loop 10 times
+
+c=0
+
+while [ $c -lt 10 ]
+
+do
+ echo "Best School"
+ (( c++ ))
+done
