@@ -3,14 +3,14 @@
 # Bash script that demonstrates signal handling and file operations.
 
 # Create a file to store the PID of this script.
-sudo touch /var/run/holbertonscript.pid
-sudo bash -c 'echo $$ > /var/run/holbertonscript.pid'
+sudo touch /var/run/myscript.pid
+sudo bash -c 'echo $$ > /var/run/myscript.pid'
 
 # Function to execute when receiving a SIGTERM signal (15).
 hate()
 {
     echo "I hate the kill command"
-    sudo rm /var/run/holbertonscript.pid
+    sudo rm /var/run/myscript.pid
 }
 
 # Function to execute when receiving a SIGINT signal (2).
@@ -23,7 +23,7 @@ no_love()
 clean_up()
 {
     echo "Cleaning up and terminating..."
-    sudo rm /var/run/holbertonscript.pid
+    sudo rm /var/run/myscript.pid
     exit
 }
 
