@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+# Bash script to forcefully terminate the process named "7-highlander".
+
+# Use the 'pkill' command with the '-SIGKILL' option to send the SIGKILL signal to the process
+# whose command line matches the pattern "7-highlander". The '-f' option allows matching
+# against the full command line of the process.
+
+# Note: Sending the SIGKILL signal forcefully terminates the process without allowing it to
+# perform any cleanup or save its state. Use with caution.
+
+pkill -SIGKILL -f "7-highlander"

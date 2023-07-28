@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+# This script displays the message "To infinity and beyond" indefinitely at a 2-second interval.
+
+# Set the initial value of the variable 'i' to "1".
+i="1"
+
+# Start an infinite loop.
+while [ $i -eq 1 ]
+do
+    # Display the message "To infinity and beyond".
+    echo "To infinity and beyond"
+
+    # Pause the script execution for 2 seconds using the 'sleep' command.
+    sleep 2
+done

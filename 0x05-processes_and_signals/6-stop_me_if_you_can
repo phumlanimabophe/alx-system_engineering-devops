@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+# Bash script to terminate the "To infinity and beyond" loop process.
+
+# Use the 'pkill' command to find and terminate the process whose command line
+# matches the pattern "4-to_infinity_and_beyond". The '-f' option allows matching
+# against the full command line of the process, ensuring accurate termination.
+
+pkill -f 4-to_infinity_and_beyond

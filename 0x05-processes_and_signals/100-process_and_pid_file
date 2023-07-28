@@ -1,0 +1,40 @@
+#!/usr/bin/env bash
+
+# Bash script that demonstrates signal handling and file operations.
+
+# Create a file to store the PID of this script.
+sudo touch /var/run/holbertonscript.pid
+sudo bash -c 'echo $$ > /var/run/holbertonscript.pid'
+
+# Function to execute when receiving a SIGTERM signal (15).
+hate()
+{
+    echo "I hate the kill command"
+    sudo rm /var/run/holbertonscript.pid
+}
+
+# Function to execute when receiving a SIGINT signal (2).
+no_love()
+{
+    echo "Y U no love me?!"
+}
+
+# Function to execute when receiving a SIGQUIT signal (3).
+clean_up()
+{
+    echo "Cleaning up and terminating..."
+    sudo rm /var/run/holbertonscript.pid
+    exit
+}
+
+# Set up signal handlers using 'trap' for SIGTERM, SIGINT, and SIGQUIT.
+trap 'hate; exit' SIGTERM
+trap 'no_love; exit' SIGINT
+trap 'clean_up' SIGQUIT
+
+i="1"
+while [ $i -eq 1 ]
+do
+    echo "To infinity and beyond"
+    sleep 2
+done
