@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# This script finds and terminates a process containing the word "beyond" using the 'kill' command.
+# It first searches for the process using 'ps' and 'pgrep', then sends a termination signal to it.
+
+kill "$(ps -x | pgrep -f beyond)"
