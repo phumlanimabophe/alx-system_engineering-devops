@@ -1,5 +1,12 @@
 #!/bin/bash
 # shellcheck disable=SC2009
 
-
+# Use 'ps' command to list all processes
+# The 'axww' options mean:
+# - 'a': Show processes for all users
+# - 'x': Show processes without controlling terminals (those without TTY)
+# - 'w': Wide output to prevent truncating command names
+# - 'w': Also include full command path and arguments
+# Then, use 'grep' to filter lines containing the word 'bash'
+# Finally, exclude the current script itself from the results using 'grep -v' with the script name
 ps axww | grep bash | grep -v grep | grep -v "$0"
