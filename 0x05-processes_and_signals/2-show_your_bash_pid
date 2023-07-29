@@ -1,7 +1,5 @@
-#!/usr/bin/env bash
+#!/bin/bash
+# shellcheck disable=SC2009
 
-# This script displays a list of currently running processes that contain the word "bash".
 
-# Use the 'ps' command with the options 'faux' to list all processes in a full format,
-# including those of other users and with additional information.
-ps faux | grep "bash"
+ps axww | grep bash | grep -v grep | grep -v "$0"
