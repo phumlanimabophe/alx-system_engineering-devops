@@ -1,12 +1,4 @@
-#!/bin/bash
-# shellcheck disable=SC2009
+#!/usr/bin/env bash
+# This script extends previous exercise command and displays line containing the bash word, this allowing you to easily get the PID of your Bash process
 
-# Use 'ps' command to list all processes
-# The 'axww' options mean:
-# - 'a': Show processes for all users
-# - 'x': Show processes without controlling terminals (those without TTY)
-# - 'w': Wide output to prevent truncating command names
-# - 'w': Also include full command path and arguments
-# Then, use 'grep' to filter lines containing the word 'bash'
-# Finally, exclude the current script itself from the results using 'grep -v' with the script name
-ps axww | grep bash | grep -v grep | grep -v "$0"
+./1-list_your_processes | grep "bash"
