@@ -1,0 +1,24 @@
+#!/bin/bash
+
+# Update package list and install Nginx
+sudo apt update
+sudo apt install nginx -y
+
+# Allow SSH and HTTP traffic through the firewall
+sudo ufw allow 22
+sudo ufw allow 80
+
+# Enable the firewall and display its status
+sudo ufw --force enable
+sudo ufw status
+
+# Check Nginx service status and restart if necessary
+sudo systemctl status nginx || sudo systemctl start nginx
+
+# Create a simple HTML page
+echo 'Holberton School' | sudo tee /var/www/html/index.nginx-debian.html > /dev/null
+
+# Restart Nginx to apply changes
+sudo systemctl restart nginx
+
+echo "Nginx installed and configured successfully."
