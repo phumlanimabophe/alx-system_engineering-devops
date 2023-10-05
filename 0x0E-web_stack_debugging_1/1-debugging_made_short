@@ -1,12 +1,5 @@
 #!/usr/bin/env bash
-# Bash script to configure Nginx to listen on port 80 with minimal commands.
-
-# Create a symbolic link to the default Nginx site configuration
+# Create a symbolic link to the default Nginx site config, Start the service, Restart killing the first Nginx process
 ln -sf /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
-
-# Start the Nginx service
 service nginx start
-
-# Restart Nginx by killing the first Nginx process
 kill "$(pgrep 'nginx' | head -1)"
-
